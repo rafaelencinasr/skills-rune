@@ -27,6 +27,9 @@ let skills = [];
 function Skill(name){
     this.name = name;
     this.score = 0;
+    this.farm1 = false;
+    this.farm2 = false;
+    this.farm3 = false;
 }
 
 let skillNames = [
@@ -77,12 +80,21 @@ function skillElementGenerator (skill){
     let farm1 = document.createElement('input');
     farm1.type = 'checkbox';
     farm1.id = skillNameLowercase + '-farm1';
+    farm1.checked = skill.farm1;
+    farm1.classList.add('farmingCheckbox');
+
     let farm2 = document.createElement('input');
     farm2.type = 'checkbox';
     farm2.id = skillNameLowercase + '-farm2';
+    farm2.checked = skill.farm2;
+    farm2.classList.add('farmingCheckbox');
+    
     let farm3 = document.createElement('input');
     farm3.type = 'checkbox';
     farm3.id = skillNameLowercase + '-farm3';
+    farm3.checked = skill.farm3;
+    farm3.classList.add('farmingCheckbox');
+
     farmingWrapper.append(farm1, farm2, farm3);
 
     skillLabel.htmlFor = skillNameLowercase;
@@ -106,6 +118,9 @@ function saveData(){
     recoveredSkills.forEach(element=>{
         //console.log(`${element.name.toLowerCase()}`);
         element.score = document.querySelector(`#${element.name.toLowerCase()}`).value;
+        element.farm1 = document.querySelector(`#${element.name.toLowerCase()}-farm1`).checked;
+        element.farm2 = document.querySelector(`#${element.name.toLowerCase()}-farm2`).checked;
+        element.farm3 = document.querySelector(`#${element.name.toLowerCase()}-farm3`).checked;
     })
     localStorage.setItem("skills", JSON.stringify(recoveredSkills));
 }

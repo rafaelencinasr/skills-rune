@@ -60,3 +60,9 @@ button{
         background-color: rgb(53, 53, 53);
     }
 }
+
+.farmingCheckbox{
+    background-color: black;
+    border: red;
+    border-radius: none;
+}
