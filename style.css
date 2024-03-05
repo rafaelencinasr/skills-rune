@@ -1,10 +1,17 @@
 body, html{
+    min-height: 100%;
     margin: 0;
     padding: 0;
     background-color: black;
     color: red;
     text-align: center;
 }
+
+body{
+    padding: 25px;
+    padding-top: 10px;
+}
+
 #content{
     max-width: 330px;
     margin: 0 auto;
@@ -12,16 +19,44 @@ body, html{
     flex-direction: column;
     gap: 5px;
 }
+
 .skillWraper{
     display: flex;
     justify-content: space-between;
 }
 
-input{
+label{
+    width: 140px;
+    text-align: start;
+}
+
+input[type=number]{
     width: 50px;
-    
+    color: white;
+    background: black;
+    text-align: center;
+    border-color: red;
 }
 
 form{
     margin: 15px 0;
+}
+
+#buttons{
+    display: flex;
+    max-width: 200px;
+    margin: 0 auto;
+    flex-direction: column;
+    gap: 5px;
+}
+
+button{
+    box-sizing: border-box;
+    padding: 5px 20px;
+    background-color: rgb(0, 0, 0);
+    color: red;
+    border: 2px solid red;
+    &:active{
+        background-color: rgb(53, 53, 53);
+    }
 }

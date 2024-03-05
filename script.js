@@ -29,7 +29,29 @@ function Skill(name){
     this.score = 0;
 }
 
-let skillNames = ['Archaeology', 'Attack', 'Cooking', 'Crafting', 'Defence', 'Dungeoneering', 'Farming', 'Fishing', 'Fletching', 'Herblore', 'Hunting', 'Magic', 'Mining', 'Prayer', 'Ranged', 'Runecrafting', 'Slayer', 'Smithing', 'Summoning', 'Thieving', 'Woodcutting'];
+let skillNames = [
+    'Archaeology',
+    'Attack',
+    'Cooking',
+    'Crafting',
+    'Defence',
+    'Dungeoneering',
+    'Farming',
+    'Fishing',
+    'Fletching',
+    'Herblore',
+    'Hunting',
+    'Magic',
+    'Mining',
+    'Prayer',
+    'Ranged',
+    'Runecrafting',
+    'Slayer',
+    'Smithing',
+    'Summoning',
+    'Thieving',
+    'Woodcutting'
+];
 
 skillNames.forEach(element => {
     skills.push(new Skill(element));
@@ -51,6 +73,17 @@ function skillElementGenerator (skill){
     const skillLabel = document.createElement('label');
     const skillInput = document.createElement('input');
     const skillNameLowercase = skill.name.toLowerCase();
+    const farmingWrapper = document.createElement('div');
+    let farm1 = document.createElement('input');
+    farm1.type = 'checkbox';
+    farm1.id = skillNameLowercase + '-farm1';
+    let farm2 = document.createElement('input');
+    farm2.type = 'checkbox';
+    farm2.id = skillNameLowercase + '-farm2';
+    let farm3 = document.createElement('input');
+    farm3.type = 'checkbox';
+    farm3.id = skillNameLowercase + '-farm3';
+    farmingWrapper.append(farm1, farm2, farm3);
 
     skillLabel.htmlFor = skillNameLowercase;
     skillLabel.textContent = skill.name;
@@ -60,7 +93,7 @@ function skillElementGenerator (skill){
     skillInput.id = skillNameLowercase;
     skillInput.value = skill.score;
 
-    skillWrapper.append(skillLabel, skillInput);
+    skillWrapper.append(skillLabel, skillInput, farmingWrapper);
 
     return skillWrapper;
 };
