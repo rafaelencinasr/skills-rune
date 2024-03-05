@@ -3,4 +3,21 @@ body, html{
     padding: 0;
     background-color: black;
     color: red;
+    text-align: center;
+}
+#content{
+    max-width: 330px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.skillWraper{
+    display: flex;
+    justify-content: space-between;
+}
+
+input{
+    width: 50px;
+    
 }

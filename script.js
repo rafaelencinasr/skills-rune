@@ -14,7 +14,13 @@ cancelBtn.addEventListener('click', function(event){
         contentLocation.append(skillElementGenerator(element));
     })
 });
-
+const resetSkillsBtn = document.querySelector('#resetSkills');
+resetSkillsBtn.addEventListener('click', ()=>{
+    contentLocation.innerHTML = '';
+    skills.forEach(element => {
+        contentLocation.append(skillElementGenerator(element));
+    })
+})
 let recoveredSkills;
 let skills = [];
 
@@ -41,6 +47,7 @@ if (localStorage.getItem('skills')){
 function skillElementGenerator (skill){
     //console.log(`${skill.name}: ${skill.score}`);
     const skillWrapper = document.createElement('div');
+    skillWrapper.classList.add('skillWraper');
     const skillLabel = document.createElement('label');
     const skillInput = document.createElement('input');
     const skillNameLowercase = skill.name.toLowerCase();
