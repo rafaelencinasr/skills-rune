@@ -116,7 +116,6 @@ recoveredSkills.forEach(element => {
 
 function saveData(){
     recoveredSkills.forEach(element=>{
-        //console.log(`${element.name.toLowerCase()}`);
         element.score = document.querySelector(`#${element.name.toLowerCase()}`).value;
         element.farm1 = document.querySelector(`#${element.name.toLowerCase()}-farm1`).checked;
         element.farm2 = document.querySelector(`#${element.name.toLowerCase()}-farm2`).checked;
