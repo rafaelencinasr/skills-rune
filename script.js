@@ -26,7 +26,7 @@ let skills = [];
 
 function Skill(name){
     this.name = name;
-    this.score = 0;
+    this.score = 1;
     this.farm1 = false;
     this.farm2 = false;
     this.farm3 = false;
